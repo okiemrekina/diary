@@ -1,0 +1,15 @@
+<div>
+<% @entries.each do |entry| %>
+<u><h2><%= link_to(entry.title, entry_path(entry)) %></h2></u>
+  <!-- <h2><%= entry.title %></h2> -->
+    <p><%= entry.date %></p>
+    <p>Post added: <%= entry.created_at %></p>
+ <% if entry.created_at != entry.updated_at %>
+    <p>Post modified: <%= entry.updated_at %></p>
+    <% end %>
+    <p><%= entry.contents %></p>
+<% end %>
+</div>
+<div>
+	<%= link_to("Add new entry &raquo;".html_safe, new_entry_path) %>
+</div>

@@ -1,0 +1,14 @@
+<%= form_for(Entry.new) do |form| %>
+  <p><%= form.label("Put title here") %></p>
+  <p><%= form.text_field("title") %></p>
+  <p><%= form.label("Put content here") %></p>
+  <p><%= form.text_area("contents") %></p>
+  <p><%= form.label("Add picture if you like") %><p>
+  <p><%= form.file_field :picture %><p>
+  </p>
+  </p>
+  <p><%= form.submit("Submit!") %></p>
+<% end %>
+<div>
+<u><p><%= link_to("&laquo; Back to ALL entries".html_safe, entries_path) %></p></u>
+</div>

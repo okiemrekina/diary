@@ -1,0 +1,12 @@
+<%= form_for(@entry) do |form| %>
+  <p><%= form.label("Put title here") %></p>
+  <p><%= form.text_field("title") %></p>
+  <p><%= form.label("Put content here") %></p>
+  <p><%= form.text_area("contents") %></p>
+  <p><%= form.submit("Submit") %></p>
+<% end %>
+<div>
+<u><p><%= link_to("Delete THIS entry!".html_safe, entry_path(@entry), method: 'delete') %></p></u>
+<u><p><%= link_to("&laquo; Back to this entry".html_safe, entry_path(@entry)) %></p></u>
+<u><p><%= link_to("&laquo; Back to ALL entries".html_safe, entries_path) %></p></u>
+</div>

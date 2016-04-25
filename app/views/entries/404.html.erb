@@ -1,0 +1,8 @@
+<h1>There are is not such a post!</h1>
+<div>
+</p>
+<h2>Choose one of the available posts:</h2>
+<% @entries.each_with_index do |entry, index| %>
+<u><p><%= link_to("#{index+1 } #{entry.title} &raquo;".html_safe, entry_path(entry)) %></p></u>
+<%end %>
+</div>

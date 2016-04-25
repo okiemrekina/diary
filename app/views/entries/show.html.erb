@@ -1,0 +1,27 @@
+<div>
+<h2><%= @entry.title %></h2>
+<p><%= @entry.date %></p>
+<p><%= @entry.created_at %></p>
+<% if @entry.created_at != @entry.updated_at %>
+<p>Post modified: <%= @entry.updated_at %></p>
+<% end %>
+<p><%= @entry.contents %></p>
+</div>
+<p><%= image_tag(@entry.picture_url, :width => 600) if @entry.picture.present? %></p>
+</p>
+
+<div>
+<h3>Comments</h3>
+<% @entry.comments.each do |comment| %>
+    <strong><%= comment.user_name %></strong><br />
+    <strong><%= comment.body %></strong>
+    <strong background="green"><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></strong><br />
+<% end %>
+</div>
+
+<%= render 'comments/form' %>
+
+<div>
+<p><u><%= link_to('Edit THIS entry', edit_entry_path(@entry)) %></p></u>
+<p><u><%= link_to('&laquo; Back to ALL entries'.html_safe, entries_path()) %></p></u>
+</div> 
