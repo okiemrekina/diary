@@ -8,8 +8,8 @@ default: &default
   #adapter: sqlite3 #postgresql
   host: localhost
   adapter: postgresql
-  username: rails
-  password: ror
+  username: emi
+  password: 
   pool: 5
   timeout: 5000
 
